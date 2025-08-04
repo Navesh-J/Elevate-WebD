@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">✨Xdrive</div>
+    <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1>Innovate Your Future</h1>
+      <p>Where creativity meets code.</p>
+      <a href="#features" class="btn">Discover More</a>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature">
+      <h2>Fast</h2>
+      <p>Lightning-speed performance.</p>
+    </div>
+    <div class="feature">
+      <h2>Responsive</h2>
+      <p>Looks perfect on any device.</p>
+    </div>
+    <div class="feature">
+      <h2>Secure</h2>
+      <p>Top-tier protection built in.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>Connect with us:</p>
+    <div class="social">
+      <a href="#">🕊️</a><a href="#">💼</a><a href="#">📷</a>
+    </div>
+    <p>&copy; 2025 Xdrive</p>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    btn.addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
+  </script>
+</body>
+
+</html> 

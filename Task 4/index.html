@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Responsive Demo Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">MySite</div>
+
+            <!-- CSS-only hamburger + hidden checkbox -->
+            <label class="hamburger" for="menu-toggle" aria-hidden="true">☰</label>
+            <input id="menu-toggle" type="checkbox" hidden>
+
+            <nav class="menu" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#docs">Docs</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <h1>Make your page look great on any device</h1>
+            <p class="lead">Simple responsive layout using CSS media queries.</p>
+        </div>
+        <img class="hero-img" src="https://images.pexels.com/photos/611328/pexels-photo-611328.jpeg" alt="Hero image">
+    </section>
+
+    <main class="container">
+        <div class="row">
+            <section class="col content">
+                <article class="card">
+                    <h2>Primary Content</h2>
+                    <p>
+                        This column holds the main content. On smaller screens the columns stack vertically.
+                        Images scale to the container width and long text wraps without causing horizontal scroll.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h2>Another Section</h2>
+                    <p>Use <code>max-width</code> and flexible units; avoid fixed pixel widths on containers.</p>
+                    <img src="https://via.placeholder.com/800x300" alt="Example image">
+                </article>
+            </section>
+
+            <aside class="col sidebar">
+                <div class="card">
+                    <h3>Sidebar</h3>
+                    <ul>
+                        <li><a href="#one">Item one</a></li>
+                        <li><a href="#two">Item two</a></li>
+                        <li><a href="#three">Item three</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>© 2025 MySite — responsive demo</small>
+        </div>
+    </footer>
+
+    <script>// Small enhancement: when a nav link is clicked on mobile, close the CSS-only menu
+        document.addEventListener('click', function (e) {
+            const menuToggle = document.getElementById('menu-toggle');
+            if (!menuToggle) return;
+            if (e.target.matches('nav.menu a') && menuToggle.checked) {
+                menuToggle.checked = false;
+            }
+        });
+    </script>
+</body>
+
+</html>

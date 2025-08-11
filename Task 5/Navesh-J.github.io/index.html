@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navesh J | Portfolio</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        position: relative;
+    }
+
+    /* Animated background waves */
+    .background {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(-45deg, #00c6ff, #0072ff, #00c6ff, #0072ff);
+        background-size: 400% 400%;
+        animation: bgAnimation 12s ease infinite;
+        z-index: -1;
+    }
+    @keyframes bgAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Glassmorphism container */
+    .profile-card {
+        text-align: center;
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        animation: fadeInUp 1.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-card img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255,255,255,0.8);
+        transition: transform 0.4s ease;
+        animation: float 4s ease-in-out infinite;
+    }
+    .profile-card img:hover {
+        transform: scale(1.05) rotate(3deg);
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        margin: 1rem 0 0.5rem;
+    }
+    .typing {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #ffdd57;
+        height: 1.6rem;
+        border-right: 2px solid #ffdd57;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 28px;
+        background: linear-gradient(135deg, #ffdd57, #ff8a00);
+        color: #222;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .btn:hover {
+        background: linear-gradient(135deg, #ff8a00, #ffdd57);
+        transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+        position: fixed;
+        bottom: 10px;
+        font-size: 0.9rem;
+        opacity: 0.75;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="profile-card">
+    <img src="https://avatars.githubusercontent.com/u/119146351?v=4" alt="Profile Picture">
+    <h1>Navesh J</h1>
+    <p class="typing"></p>
+    <a href="https://github.com/Navesh-J" target="_blank" class="btn">🚀 View My GitHub</a>
+</div>
+
+<footer>
+    &copy; 2025 Navesh J. All rights reserved.
+</footer>
+
+<script>
+    const roles = ["Full-Stack", "Open Source", "Tech Enthusiast", "Problem Solver"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    const typingElement = document.querySelector(".typing");
+
+    function typeText() {
+        if (charIndex < roles[roleIndex].length) {
+            typingElement.textContent += roles[roleIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeText, 100);
+        } else {
+            setTimeout(eraseText, 1500);
+        }
+    }
+
+    function eraseText() {
+        if (charIndex > 0) {
+            typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(eraseText, 50);
+        } else {
+            roleIndex = (roleIndex + 1) % roles.length;
+            setTimeout(typeText, 300);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        typeText();
+    });
+</script>
+
+</body>
+</html>

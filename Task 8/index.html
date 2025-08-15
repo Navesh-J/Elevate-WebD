@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Blog</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        /* Global Colors */
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #ff6584;
+            --light-bg: #faf8f6;
+            --text-color: #1c1b1b;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--text-color);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            opacity: 0.85;
+        }
+
+        /* Hero */
+        .hero {
+            height: 75vh;
+            background: linear-gradient(rgba(108, 99, 255, 0.5), rgba(255, 101, 132, 0.4)),
+                url('https://source.unsplash.com/1600x900?creative,workspace') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: rgb(40, 14, 14);
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            background: white;
+            padding: .5rem;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .btn-custom {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            padding: 6px 20px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            transition: opacity 0.3s;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Bloggy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div>
+            <h1>Inspiring Stories for Modern Creators</h1>
+            <p>Explore curated articles, visuals, and ideas to fuel your imagination and creativity.</p>
+        </div>
+    </section>
+
+    <!-- Blog Cards -->
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXJ0fGVufDB8fDB8fHww" class="card-img-top" alt="Design">
+                    <div class="card-body">
+                        <h5 class="card-title">Design Trends 2025</h5>
+                        <p class="card-text text-muted">A look at the emerging aesthetics shaping the creative world
+                            this year.</p>
+                        <a href="#" class="btn btn-custom">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1526566762798-8fac9c07aa98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGlmZXN0eWxlfGVufDB8fDB8fHww" class="card-img-top" alt="Lifestyle">
+                    <div class="card-body">
+                        <h5 class="card-title">Mindful Living</h5>
+                        <p class="card-text text-muted">Practical tips for bringing mindfulness into your everyday life.
+                        </p>
+                        <a href="#" class="btn btn-custom">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBob3RvZ3JhcGh5fGVufDB8fDB8fHww" class="card-img-top" alt="Photography">
+                    <div class="card-body">
+                        <h5 class="card-title">Photography Secrets</h5>
+                        <p class="card-text text-muted">Techniques for capturing stunning images no matter your gear.
+                        </p>
+                        <a href="#" class="btn btn-custom">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div>
+            <p class="mb-2">Connect With Us</p>
+            <a href="#"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="#"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#"><i class="bi bi-twitter fs-4"></i></a>
+        </div>
+        <p class="mt-3 mb-0">&copy; 2025 Bloggy. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
